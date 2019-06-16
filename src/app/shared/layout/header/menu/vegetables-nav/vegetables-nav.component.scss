@@ -1,0 +1,100 @@
+@import '../../../../common-styles/mixins.scss';
+$green: #60be74;
+
+.main {
+    @include flex(flex, column, center, nowrap);
+    width: 1219px;
+    margin-top: 20px;
+    transition: all 0.3s;
+
+    .all-products {
+        @include flex(flex, row, space-around, nowrap);
+    }
+
+    .block-products {
+        @include flex(flex, column, center, nowrap);
+
+        p {
+            margin-left: 10px;
+            text-transform: uppercase;
+            color: gray;
+            font-weight: 700;
+        }
+
+        .green-line {
+            width: 30px;
+            height: 1px;
+            background: $green;
+            margin-left: 10px;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+        text-transform: capitalize;
+        color: gray;
+        margin: 10px;
+    }
+
+    ul li:hover {
+        color: $green;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    .mega-sale-box {
+        @include flex(flex, row, space-between, nowrap);
+        margin: 20px 0px;
+
+        img {
+            margin: 0px 15px;
+        }
+    }
+}
+
+@media all and (max-width:1024px) {
+    .main {
+        width: 1004px;
+    }
+
+    .mega-sale-box {
+        div {
+            img {
+                width: 475px;
+            }
+        }
+    }
+}
+
+@media all and (max-width:990px) {
+    .main {
+        width: 973px;
+    }
+
+    .mega-sale-box {
+        div {
+            img {
+                width: 450px;
+            }
+        }
+    }
+}
+
+@media all and (max-width:768px){
+    .main {
+        width: 750px;
+    }
+
+    .mega-sale-box {
+        div {
+            img {
+                width: 300px;
+            }
+        }
+    }
+} 

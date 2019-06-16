@@ -1,0 +1,53 @@
+@import '../../common-styles/mixins.scss';
+$green: #60be74;
+.header {
+    width: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1250px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.search {
+    input {
+        height: 46px;
+        width: 350px;
+        border: 0;
+        border-radius: 5px;
+        &:focus {
+            border-radius: 5px;
+            outline: 2px solid $green;
+        }
+        &::placeholder {
+            color: $green;
+            font-weight: 500;
+        }
+    }
+}
+
+.sticky {
+    position: fixed;
+    top: -27px;
+    z-index: 99999;
+    width: 100%;
+}
+
+@media all and (max-width: 360px) {
+    .row {
+        margin-top: 60px;
+      
+    }
+}

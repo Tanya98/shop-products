@@ -1,0 +1,40 @@
+<div *ngIf="(currentProduct$| async) as currentProduct; else preolder">
+  <div class="main" *ngFor="let product of currentProduct">
+    <div class="image-product">
+      <img [src]="product.img">
+    </div>
+
+    <div class="description">
+      <div>
+        <h2>{{product.name}}</h2>
+      </div>
+      <hr>
+      <div class="price-box">
+        <p class="price">${{product.price}}</p>
+        <span>{{product.availability}}</span>
+      </div>
+      <div class="description-box">
+        <p class="title">Description</p>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique
+          auctor. Donec
+          non est at libero <br> vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
+          vulputate
+          adipiscing cursus eu, suscipit id <br> nulla. Donec a neque libero. Pellentesque aliquet, sem eget laoreet
+          ultrices,
+          ipsum metus feugiat sem, quis fermentum <br> turpis eros eget velit. Donec ac tempus ante. <br>
+          Velit scelerisque diam sed arcu commodo vitae, tempor id id dignissim, arcu pellentesque neque lacinia ut
+          condimentum, <br> aliquam hac integer auctor ac fusce vitae. Vestibulum duis, mi accumsan, ut turpis nulla
+          volutpat
+          officia. Nulla in metus, <br> purus urna per duis gravida tellus ea, laoreet condimentum sagittis diam at
+          dictumst.
+          Maecenas nulla consequat imperdiet <br> ipsum erat vitae, magna libero erat convallis elit aliquet.
+        </p>
+
+        <div class="add-to-cart">
+          <button class="but-add" (click)="addToCart(product)"><i class="fas fa-shopping-cart icon"></i>add to
+            cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

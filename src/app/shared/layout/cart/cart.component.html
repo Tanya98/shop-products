@@ -1,0 +1,23 @@
+<div class="main-block">
+  <div>
+    <div class=" block-cart">
+      <div class="cart">
+        <i class="fas fa-shopping-cart icon"></i>
+      </div>
+      <span class="count">{{totalCount$ | async}}</span>
+
+      <div class="info">
+        <span class="text">my cart/</span>
+        <span class="count">{{totalPrice$ | async | number: '1.0-0'}}$</span>
+      </div>
+    </div>
+  </div>
+  <div class="basket animated fadeInRight">
+    <div class="block-products">
+      <goods-product *ngFor="let product of products$ | async" [product]="product" (remove)="removeProduct($event)"
+        (increment)="incrementProduct($event)" (decrement)="decrementProduct($event)">
+      </goods-product>
+    </div>
+    <button class="but-view"><i class="fas fa-shopping-cart"></i>VIEW CART</button>
+  </div>
+</div>

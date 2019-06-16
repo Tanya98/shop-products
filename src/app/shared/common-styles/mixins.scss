@@ -1,0 +1,15 @@
+@mixin arrow($bor-left, $bor-right, $bor-top, $bor-bottom) {
+    border-left: $bor-left;
+    border-right: $bor-right;
+    border-top: $bor-top;
+    border-bottom: $bor-bottom;
+    content: "";
+    position: absolute;
+}
+
+@mixin flex($dis-flex, $flex-dir:null, $jus-con:null, $flex-wrap:null) {
+    display: $dis-flex;
+    flex-direction: $flex-dir;
+    justify-content: $jus-con;
+    flex-wrap: $flex-wrap;
+}

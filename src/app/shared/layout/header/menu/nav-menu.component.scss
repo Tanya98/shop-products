@@ -1,0 +1,127 @@
+@import '../../../common-styles/mixins.scss';
+$green: #60be74;
+
+.menu {
+    width: 1219px;
+    margin: 0 auto;
+    position: relative;
+    top: 27px;
+}
+
+.menu__expander-container {
+    position: absolute;
+    z-index: 1000;
+    top: 168px;
+    left: 65px;
+    background: white;
+}
+
+.menu-sticky {
+    width: 100%;
+}
+
+.sticky {
+    top: 54px;
+    position: fixed;
+    width: 100%;
+}
+
+.box {
+    width: 600px;
+    background-color: white;
+    height: 200px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    background: $green;
+    margin: 0;
+    padding: 0;
+
+    &::before {
+        @include arrow(0px, 25px solid $green, 27px solid transparent, 27px solid transparent);
+        width: 0;
+        height: 0;
+        margin-left: -25px;
+    }
+
+    &::after {
+        @include arrow(25px solid $green, 0px, 27px solid transparent, 27px solid transparent);
+        margin-right: -24px;
+        right: -1px;
+        top: 53px;
+        margin-top: -54px;
+    }
+}
+
+ul li {
+    padding: 15px;
+}
+
+span {
+    cursor: pointer;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+.drop-down-menu {
+    display: none;
+    width: 70px;
+    height: 30px;
+    background: white;
+    margin-left: 20px;
+    border: 1px solid $green;
+    border-radius: 2px;
+    color: $green;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .menu__expander-container {
+        left: 0px !important;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    ul {
+        &::before {
+            border-right: 0;
+        }
+
+        &::after {
+            border-left: 0;
+        }
+    }
+}
+
+@media all and (max-width: 700px) {
+    .menu__expander-container {
+        display: none;
+    }
+
+    .menu {
+        top: 43px;
+    }
+
+    ul {
+        // flex-direction: column;
+        // width: 300px;
+        display: none;
+    }
+    .drop-down-menu {
+        display: block;
+    }
+}

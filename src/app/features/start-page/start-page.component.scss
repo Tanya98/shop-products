@@ -1,0 +1,61 @@
+@import '../../shared/common-styles/mixins.scss';
+$green: #60be74;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+@include flex(flex, column, center, nowrap);
+    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    // background-position: center;
+}
+
+.block-greeting {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 40px;
+}
+
+.block-logo {
+    margin-left: 40px;
+
+}
+
+.title {
+    border-bottom: 3px double white;
+    border-top: 3px double white;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.block-greeting p {
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+    padding-left: 12px;
+}
+
+.but {
+    background: $green;
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    border: 0;
+    padding: 10px 25px;
+    font-weight: bold;
+    margin-left: 30px;
+    border-radius: 2px;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+}

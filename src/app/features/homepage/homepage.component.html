@@ -1,0 +1,143 @@
+<div class="block-slider">
+
+  <div class="carousel">
+    <carousel>
+      <slide>
+        <img src="assets/images/slide-img1.jpg" alt="first slide" style="display: block; width: 100%;">
+        <div class="block-description" [@text]="'left'">
+          <h4>modern design</h4>
+          <h1>season sale</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <button class="but-shop">shop now</button>
+        </div>
+      </slide>
+      <slide>
+        <img src="assets/images/slide-img2.jpg" alt="second slide" style="display: block; width: 100%;">
+        <div class="block-description" [@text]="'left'">
+          <h4>mega sale</h4>
+          <h1>go lichtly</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <button class="but-shop">buy now</button>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+
+  <div class="images-box">
+
+    <div class="block-fruits">
+      <img src="assets/images/organic-fruits.jpg">
+
+      <div class="fruits">
+        <div class="fruit">
+          <h6>fresh</h6>
+          <h5>organic fruits</h5>
+        </div>
+      </div>
+      <img class="image-1" src="assets/images/healthy-foods.jpg">
+
+      <div class="fruits">
+        <div class="fruit lime">
+          <h6>100%</h6>
+          <h5>healthy foods</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="block-foods">
+      <img src="assets/images/best-price-always.jpg">
+
+      <div class="block-food">
+        <h1>best price <br> always</h1>
+        <div class="line"></div>
+        <h6>Our Delisious Food At <br> Your Doorstep!</h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block-elements">
+
+  <div class="block-new-products">
+    <h2><strong>new</strong> products</h2>
+    <div *ngIf="(categories$ | async) as categories; else preolder" class="block-buttons">
+      <div *ngFor="let category of categories">
+        <button class="but" *ngIf="category.id =='4'" (click)="changeType(category.id)">
+          {{category.name|uppercase}}
+        </button>
+        <button class="but" *ngIf="category.id =='5'" (click)="changeType(category.id)">
+          {{category.name|uppercase}}
+        </button>
+        <button class="but" *ngIf="category.id =='6'" (click)="changeType(category.id)">
+          {{category.name | uppercase}}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-cards" *ngIf="(productsByCategory$ | async) as products;">
+    <div class="product-card" *ngFor="let product of products">
+      <div class="image" (click)="showProduct(product)">
+        <img [src]="product.img">
+      </div>
+      <p class="title">{{product.name}}</p>
+      <p class="price">{{product.price}}$</p>
+      <button class="but-add" (click)="addToCart(product)">add to cart</button>
+    </div>
+  </div>
+</div>
+
+<div class="block-regular-product">
+  <div class="block-title">
+    <h2>Regular Product</h2>
+  </div>
+  <div class="slider block-cards" *ngIf="(regular$ | async) as regular; else preolder">
+    <div class="polosa">
+      <div class="product-card" *ngFor="let product of regular">
+        <div class="image" (click)="showProduct(product)">
+          <img [src]="product.img">
+        </div>
+        <p class="title">{{product.name}}</p>
+        <p class="price">{{product.price}}$</p>
+        <button class="but-add" (click)="addToCart(product)">add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block-featured">
+  <div class="slider">
+    <div class="block-product" *ngIf="(featured$ | async) as featured; else preolder">
+      <div class="product-card" id="product" *ngFor="let product of featured">
+        <div class="image" (click)="showProduct(product)">
+          <img [src]="product.img">
+        </div>
+        <p class="title">{{product.name}}</p>
+        <p class="price">{{product.price}}$</p>
+        <button class="but-add" (click)="addToCart(product)">add to cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="bg-greenery">
+    <div class="inner-block">
+      <h2>Featured Product</h2>
+      <p>Nostra scelerisque id dolor eget,<br>
+        nonummy lectus metus vitae<br>
+        arcu, ut diam class, rutrum vulputate morbi a nec nunc.<br>
+        Eum sociosqu senectus in quam<br>
+        suscipit, vestibulum wisi porttitor<br> praesent ut id erat.</p>
+      <button class="but-all">view all</button>
+    </div>
+  </div>
+</div>
+
+<div class="bg-banner">
+  <div class="banner">
+    <div class="banner-detail">
+      <h1>Summer season</h1>
+      <h2>Natural Fresh Fruits</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <button class="but-more">Loream more</button>
+    </div>
+  </div>
+</div>

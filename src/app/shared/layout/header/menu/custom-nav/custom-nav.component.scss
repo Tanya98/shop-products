@@ -1,0 +1,84 @@
+@import '../../../../common-styles/mixins.scss';
+
+.main {
+    @include flex(flex, column, center, nowrap);
+    width: 1219px;
+    margin-top: 20px;
+    transition: all 0.3s;
+
+    .all-products {
+        @include flex(flex, row, space-around, nowrap);
+        margin-top: 20px;
+        margin-bottom: 25px;
+
+        h3 {
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+        }
+    }
+
+    .block-products {
+        @include flex(flex, column, flex-start, nowrap);
+
+        p {
+            color: rgb(161, 159, 159);
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .gray-line {
+            width: 150px;
+            margin: 0 auto;
+            height: 1px;
+            background: rgb(161, 159, 159);
+        }
+    }
+}
+
+@media all and (max-width: 1024px){
+    .main {
+        width: 1006px;
+    }
+}
+@media all and (max-width: 990px) {
+    .main {
+        width: 990px;
+    }
+
+    .all-products {
+        width: 975px;
+        overflow: hidden;
+
+        .block-products {
+            margin: 0px 20px;
+
+            .image img {
+                width: 230px;
+            }
+        }
+
+        .block-hidden-2 {
+            display: none;
+        }
+    }
+}
+
+@media all and (max-width: 768px) {
+    .main {
+        width: 760px;
+    }
+
+    .all-products {
+        width: 760px;
+        overflow: hidden;
+
+        .block-products {
+            margin: 0px 12px;
+
+            .image img {
+                width: 225px;
+            }
+        }
+    }
+}

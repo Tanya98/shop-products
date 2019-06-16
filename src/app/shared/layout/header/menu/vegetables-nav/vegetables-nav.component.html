@@ -1,0 +1,49 @@
+<div class="main animated bounceInLeft">
+
+  <div class="all-products">
+    <div class="block-products">
+      <div *ngFor="let category of leafCategory$ | async">
+        <p>{{category.name}}</p>
+      </div>
+      <div class="green-line"></div>
+      <ul *ngFor="let product of leaf$ | async">
+        <li (click)="showProduct(product)">{{product.name}}</li>
+      </ul>
+    </div>
+
+    <div class="block-products">
+      <div *ngFor="let category of rootCategory$ | async">
+        <p>{{category.name}}</p>
+      </div>
+      <div class="green-line"></div>
+      <ul *ngFor="let product of root$ | async">
+        <li (click)="showProduct(product)">{{product.name}}</li>
+      </ul>
+    </div>
+
+    <div class="block-products">
+      <div *ngFor="let category of podCategory$ | async">
+        <p>{{category.name}}</p>
+      </div>
+      <div class="green-line"></div>
+      <ul *ngFor="let product of pod$ | async">
+        <li (click)="showProduct(product)">{{product.name}}</li>
+      </ul>
+    </div>
+
+    <div class="block-products">
+      <div *ngFor="let category of bulbCategory$ | async">
+        <p>{{category.name}}</p>
+      </div>
+      <div class="green-line"></div>
+      <ul *ngFor="let product of bulb$ | async">
+        <li (click)="showProduct(product)">{{product.name}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mega-sale-box">
+    <div><img src="assets/images/mega-sale.png"></div>
+    <div><img src="assets/images/end-of-season.png"></div>
+  </div>
+</div>

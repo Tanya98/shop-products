@@ -1,0 +1,64 @@
+<ng-template #vegetables>
+    <goods-vegetables-nav (mouseleave)="onNavigationOut('vegetables')"></goods-vegetables-nav>
+</ng-template>
+
+<ng-template #fruits>
+    <goods-fruits-nav (mouseleave)="onNavigationOut('fruits')"></goods-fruits-nav>
+</ng-template>
+
+<ng-template #custom>
+    <goods-custom-nav (mouseleave)="onNavigationOut('custom')"></goods-custom-nav>
+</ng-template>
+
+<div class="menu" [ngClass]="{'menu':true, 'menu-sticky': isSticky }">
+
+        <div mat-button [matMenuTriggerFor]="menu">
+            <!-- <goods-burger-menu></goods-burger-menu> -->
+            <div class="drop-down-menu">MENU</div>
+        </div>
+
+        <mat-menu #menu="matMenu">
+            <li mat-menu-item routerLink="products">Home</li>
+            <li mat-menu-item>Fruits</li>
+            <li mat-menu-item>Vegetables</li>
+            <li mat-menu-item>About us</li>
+            <li mat-menu-item>Custom</li>
+            <li mat-menu-item>Contacts</li>
+            <li mat-menu-item routerLink="/signup">Sign Up</li>
+            <li mat-menu-item routerLink="/login">Log In</li>
+        </mat-menu>
+        
+    <ul>
+        <li><span routerLink="products">Home</span></li>
+
+        <li>
+            <span (mouseenter)="onNavigationHover('fruits')">
+                Fruits
+            </span>
+        </li>
+
+        <li>
+            <span (mouseenter)="onNavigationHover('vegetables')">
+                Vegetables
+            </span>
+        </li>
+
+        <li><span>About us</span></li>
+
+        <li>
+            <span (mouseenter)="onNavigationHover('custom')">
+                Custom
+            </span>
+        </li>
+
+        <li><span>Contacts</span></li>
+
+        <li><span routerLink="/signup">Sign Up</span></li>
+
+        <li><span routerLink="/login">Log In</span></li>
+    </ul>
+</div>
+
+<div class="menu__expander-container" [ngClass]="{'menu__expander-container':true, 'sticky': isSticky }">
+    <goods-menu-container [template]="template"></goods-menu-container>
+</div>

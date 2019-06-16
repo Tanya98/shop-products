@@ -1,0 +1,33 @@
+<div class="block-form" [formGroup]="userlist" #form='ngForm'>
+  <div class="form">
+    <h3>Registered customers</h3>
+    <div class="user-info">
+      <label for="email">Fisrtname
+        <span class="required">*</span>
+      </label>
+      <input type="text" formControlName="firstName">
+      <span class="error" *ngIf="userlist.controls['firstName'].invalid">{{userlist.controls['firstName'].errors.message}}</span>
+      <label for="email">Lastname
+        <span class="required">*</span>
+      </label>
+      <input type="text" formControlName="lastName">
+      <span class="error" *ngIf="userlist.controls['lastName'].invalid">{{userlist.controls['lastName'].errors.message}}</span>
+
+      <label for="email">Email Address
+        <span class="required">*</span>
+      </label>
+      <input type="text" formControlName="email">
+      <span class="error" *ngIf="userlist.controls['email'].invalid && userlist.controls['email'].dirty">{{userlist.controls['email'].errors.message}}</span>
+
+      <label for="email">Password
+        <span class="required">*</span>
+      </label>
+      <input type="password" formControlName="password">
+      <span class="error" *ngIf="userlist.controls['password'].invalid && userlist.controls['password'].dirty">{{userlist.controls['password'].errors.message}}</span>
+
+    </div>
+    <!-- <a routerLink="products">Back</a> -->
+    <button class="but-signup" [class.but-disabled]="form.invalid" [disabled]="form.invalid" (click)="addData(userlist.value)">Sign
+      Up</button>
+  </div>
+</div>

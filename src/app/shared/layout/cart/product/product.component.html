@@ -1,0 +1,14 @@
+<div class="product">
+  <div class="image"><img [src]="product.img"></div>
+  <div class="info-product">
+    <span class="price">{{product.price}}$</span><br>
+    <span class="title">{{product.name}}</span>
+  </div>
+  <div class="block-count">
+    <span class="but-count" (click)="decrementProduct(product)">-</span>
+    {{product.count}}
+    <span class="but-count" (click)="incrementProduct(product)">+</span>
+  </div>
+  <span class="but-remove" (click)="removeProduct(product)">X</span>
+</div>
+<hr>

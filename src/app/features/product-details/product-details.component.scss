@@ -1,0 +1,119 @@
+@import '../../shared/common-styles/mixins.scss';
+$green: #60be74;
+.main {
+    @include flex(flex, row, baseline, wrap);
+    margin: 50px 65px 0px;
+    .image-product img {
+        width: 385px;
+        height: 470px;
+    }
+    .description {
+        @include flex(flex, column, center, wrap);
+        margin-left: 40px;
+        .description-box {
+            font-size: 13px;
+            margin: 0px;
+            color: #222;
+            .title {
+                font-size: 16px;
+                color: #333;
+                margin: 10px 0px;
+                font-weight: 700;
+            }
+            .add-to-cart {
+                @include flex(flex, row, flex-start, wrap);
+                border-top: 1px solid #cdcccc;
+                border-bottom: 1px solid #cdcccc;
+                padding: 10px 0px;
+                .count {
+                    font-size: 22px;
+                    color: #999;
+                }
+                .but-count {
+                    transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s, background-position 300ms ease-in-out 0s;
+                    font-size: 25px;
+                    width: 40px;
+                    font-weight: 600;
+                    color: #999;
+                    background: transparent;
+                    border: 0;
+                    border: 1px solid #999;
+                    margin: 0px 10px;
+                    &:hover {
+                        background: $green;
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+                .but-add {
+                    font-size: 16px;
+                    padding: 7px 20px;
+                    font-weight: bold;
+                    transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s, background-position 300ms ease-in-out 0s;
+                    border: none;
+                    height: 40px;
+                    text-transform: uppercase;
+                    background: #f7746d;
+                    color: #fff;
+                    margin: 0px 10px;
+                    &:hover {
+                        background: black;
+                        color: white;
+                        cursor: pointer;
+                    }
+                    .icon {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        h2 {
+            text-transform: capitalize;
+        }
+        .price-box {
+            @include flex(flex, row, space-between, wrap);
+            border-top: 1px solid #cdcccc;
+            border-bottom: 1px solid #cdcccc;
+            padding: 10px 0px;
+            span {
+                color: #fff;
+                font-size: 11px;
+                display: block;
+                background: #6dbe14;
+                text-transform: uppercase;
+                padding: 3px 6px;
+                height: 22px;
+                font-weight: bold;
+                border-radius: 3px;
+            }
+        }
+        .price {
+            margin: 0;
+            padding: 0;
+            font-weight: 700;
+            font-size: 28px;
+            color: #f7746d;
+        }
+    }
+}
+
+button:focus {
+    outline: none;
+}
+
+@media all and (max-width:414px) {
+    .main {
+        margin: 50px 7px 0px;
+    }
+}
+
+@media all and (max-width: 375px) {
+    .main {
+        .image-product {
+            img {
+                width: 350px !important;
+                height: 450px !important;
+            }
+        }
+    }
+}

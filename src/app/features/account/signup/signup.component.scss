@@ -1,0 +1,86 @@
+@import '../../../shared/common-styles/mixins.scss';
+$green: #60be74;
+.block-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: $green;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form {
+    @include flex(flex, column, center, nowrap);
+    width: 380px; // height: 450px;
+    padding: 20px;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    align-items: center;
+    background: white;
+}
+
+input {
+    width: 300px;
+    padding: 5px 5px;
+    &:focus {
+        outline-color: red;
+    }
+}
+
+label {
+    margin-top: 20px;
+}
+
+.required {
+    color: red;
+}
+
+.form h3 {
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.but-signup {
+    background: $green;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: 0;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+}
+
+.but-disabled {
+    background: #7cb488;
+}
+
+input.ng-valid {
+    &:focus {
+        outline-color: $green;
+    }
+}
+
+.error {
+    color: red;
+}
+
+@media all and (max-width: 375px) {
+    .form {
+        width: 350px !important;
+    }
+}
+
+@media all and (max-width: 320px) {
+    .form {
+        width: 320px !important;
+    }
+}

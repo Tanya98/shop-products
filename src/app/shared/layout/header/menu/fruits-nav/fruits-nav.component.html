@@ -1,0 +1,38 @@
+<div class="main animated bounceInLeft">
+
+  <div class="all-products">
+    <div class="block-products">
+      <div *ngFor="let category of organicCategory$ | async">
+        <p>{{category.name}}</p>
+      </div>
+      <div class="green-line"></div>
+      <ul *ngFor="let product of organic$ | async">
+        <li (click)="showProduct(product)">{{product.name}}</li>
+      </ul>
+    </div>
+
+    <div class="block-products">
+      <div *ngFor="let category of seasonCategory$ | async">
+        <p>{{category.name}}</p>
+      </div>
+      <div class="green-line"></div>
+      <ul *ngFor="let product of season$ | async">
+        <li (click)="showProduct(product)">{{product.name}}</li>
+      </ul>
+    </div>
+
+    <div class="block-products">
+      <div *ngFor="let category of exoticsCategory$ | async">
+        <p>{{category.name}}</p>
+      </div>
+      <div class="green-line"></div>
+      <ul *ngFor="let product of exotics$ | async">
+        <li (click)="showProduct(product)">{{product.name}}</li>
+      </ul>
+    </div>
+
+    <div class="image-fruit">
+      <img src="assets/images/fruits-banner.png">
+    </div>
+  </div>
+</div>

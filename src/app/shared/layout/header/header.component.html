@@ -1,0 +1,18 @@
+<div class="header" [style.background-image]="'url('+ header +')'">
+  <div class="container">
+    <div class="row">
+
+      <div>
+        <img src="../assets/images/logo.png">
+      </div>
+
+      <goods-cart></goods-cart>
+
+    </div>
+  </div>
+
+  <goods-nav-menu [ngClass]="{'menu':true, 'sticky': isSticky }"></goods-nav-menu>
+
+</div>
+
+<router-outlet></router-outlet>
